@@ -67,9 +67,13 @@ paises |>
 5. Las series temporales sugieren una correlación entre el PBI per cápita de los dos países. Completá este código para hacer un gráfico de puntos que muestren el PBI per cápita de Argentina en función del PBI.
 
 ```{r, eval = FALSE, include = TRUE}
-paises %>% 
-  filter(pais %in% c(___, ___)) %>% 
-  pivot_wider(id_cols = ___, names_from = ___, values_from = ___) %>% 
+paises |>
+  filter(pais %in% c("Argentina", "Uruguay")) |>
+  pivot_wider(
+    id_cols = anio,
+    names_from = pais,
+    values_from = pib_per_capita
+  ) |>
   ggplot(aes(Argentina, Uruguay)) +
   geom_point()
 ```
