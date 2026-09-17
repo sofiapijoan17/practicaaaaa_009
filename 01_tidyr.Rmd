@@ -57,6 +57,12 @@ promedios_continente |>
 
 4. Hacé un gráfico de líneas que muestre una línea de cada color para la evolución del PBI per cápita de Argentina y Uruguay (no requiere usar pivot)
 
+```{r}
+paises |>
+  filter(pais %in% c("Argentina", "Uruguay")) |>
+  ggplot(aes(x = anio, y = pib_per_capita, color = pais)) +
+  geom_line()
+```
 
 5. Las series temporales sugieren una correlación entre el PBI per cápita de los dos países. Completá este código para hacer un gráfico de puntos que muestren el PBI per cápita de Argentina en función del PBI.
 
