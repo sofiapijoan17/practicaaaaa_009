@@ -47,6 +47,13 @@ promedios_continente
 
 3. Mostrá el resultado del punto anterior como una tabla con una fila para cada continente y una columna para cada variable. 
 
+```{r}
+promedios_continente |>
+  pivot_wider(
+    names_from = variable,
+    values_from = valor_promedio
+  )
+```
 
 4. Hacé un gráfico de líneas que muestre una línea de cada color para la evolución del PBI per cápita de Argentina y Uruguay (no requiere usar pivot)
 
