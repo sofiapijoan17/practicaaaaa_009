@@ -1,13 +1,16 @@
 ---
 title: "tidyr"
-author: "tu nombre"
+author: "Sofia Pijoan"
 date: "2024-08-14"
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-# Cargá los paquetes que necesitás acá
+
+library(dplyr)
+library(tidyr)
+library(ggplot2)
 ```
 
 
@@ -22,8 +25,14 @@ paises <- datos::paises
 
 
 ```{r, eval = FALSE, include = TRUE}
-paises %>% 
-  pivot_longer(cols = -c(___, ___, ___), names_to = "variable", values_to = "valor") 
+paises_largo <- paises |>
+  pivot_longer(
+    cols = -c(pais, continente, anio),
+    names_to = "variable",
+    values_to = "valor"
+  )
+
+paises_largo
 ```
 
 2. Calculá el valor promedio de esperanza de vida, población y pbi per cápita para cada continente y usando como base el resultado de punto anterior.  
