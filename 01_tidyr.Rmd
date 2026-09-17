@@ -37,6 +37,13 @@ paises_largo
 
 2. Calculá el valor promedio de esperanza de vida, población y pbi per cápita para cada continente y usando como base el resultado de punto anterior.  
 
+```{r}
+promedios_continente <- paises_largo |>
+  group_by(continente, variable) |>
+  summarise(valor_promedio = mean(valor, na.rm = TRUE))
+
+promedios_continente
+```
 
 3. Mostrá el resultado del punto anterior como una tabla con una fila para cada continente y una columna para cada variable. 
 
