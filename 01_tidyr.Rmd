@@ -1,0 +1,47 @@
+---
+title: "tidyr"
+author: "tu nombre"
+date: "2024-08-14"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# Cargá los paquetes que necesitás acá
+```
+
+
+La tabla países del paquete datos tiene datos de esperanza de vida, población y PBI per cápida para distintos países entre 1952 y 2007. 
+
+```{r}
+paises <- datos::paises
+```
+
+
+1. Completá el siguiente código para alargar la tabla de manera de obtener una tabla con columnas "país", "continente", "anio", **"variable"** (con valores "esperanza_de_vida", "poblacion" y "pib_per_capita") y **"valor"** (con los valores de cada variable para cada año y país). 
+
+
+```{r, eval = FALSE, include = TRUE}
+paises %>% 
+  pivot_longer(cols = -c(___, ___, ___), names_to = "variable", values_to = "valor") 
+```
+
+2. Calculá el valor promedio de esperanza de vida, población y pbi per cápita para cada continente y usando como base el resultado de punto anterior.  
+
+
+3. Mostrá el resultado del punto anterior como una tabla con una fila para cada continente y una columna para cada variable. 
+
+
+4. Hacé un gráfico de líneas que muestre una línea de cada color para la evolución del PBI per cápita de Argentina y Uruguay (no requiere usar pivot)
+
+
+5. Las series temporales sugieren una correlación entre el PBI per cápita de los dos países. Completá este código para hacer un gráfico de puntos que muestren el PBI per cápita de Argentina en función del PBI.
+
+```{r, eval = FALSE, include = TRUE}
+paises %>% 
+  filter(pais %in% c(___, ___)) %>% 
+  pivot_wider(id_cols = ___, names_from = ___, values_from = ___) %>% 
+  ggplot(aes(Argentina, Uruguay)) +
+  geom_point()
+```
+

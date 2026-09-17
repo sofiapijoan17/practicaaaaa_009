@@ -1,0 +1,40 @@
+---
+title: "uniones"
+author: "tu nombre"
+date: "2024-07-31"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Usando vuelos y aviones
+
+Los datos de `vuelos`y `aviones` forman parte del paquete datos, podés acceder a ellos con `datos::vuelos` y `datos::aviones`. 
+
+1. Para cada vuelo, calculá la antigüedad del avión. 
+Podés calcular la edad del avión como la resta entre el año del vuelo y el año de fabricación del avión. 
+Para eso hay que unir las tablas `vuelos` y `aviones`. 
+El año del vuelo y el año de fabricación tienen el mismo nombre (anio). ¿Qué pasa cuando las unís? ¿Cómo lo solucionarías? (Fijate en el argumento `suffix` de la función de unión.)
+
+```{r}
+
+```
+
+2. ¿Cómo varía el atraso medio de salida en función de la antigüedad del avión?
+
+```{r}
+
+```
+
+3. La tabla `aeropuertos` tiene información de distintos aeropuertos incluyendo su ubicación (lat, lon) y el nombre completo. 
+* Usando la tabla `aeropuertos` unila con la tabla de `vuelos` para tener los nombres completos de los aeropuertos de origen **y** destino de cada vuelo. 
+* Crea una tabla que muestre la cantidad de vuelos para cada aeropuerto de origen. Debe aparecer el nombre completo del aeropuerto.
+Ayuda: es recomendable que te quedes solo con las columnas que necesitas de la tabla `aeropuertos` porque tiene muchas columnas que pueden marear. 
+
+```{r}
+
+```
+
